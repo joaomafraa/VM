@@ -44,13 +44,16 @@ int ler_enderecos(FILE* arquivo){
             fprintf(stderr,"Erro no endereço da linha %d\n",n_linha);
             return 0;
         }
+        long numero_pagina = endereco / 256;
+        long deslocamento = endereco % 256;
 
-        if(ferror(arquivo)){
-            fprintf(stderr,"erro durante a leitura do arq\n");
-            return 0;
-        }
-        return 1;
+        printf("Endereco: %ld | Pagina: %ld | Deslocamento: %ld\n",endereco, numero_pagina, deslocamento);
     }
+    if(ferror(arquivo)){
+        fprintf(stderr,"erro durante a leitura do arq\n");
+        return 0;
+    }
+    
     return 1;
 }
 int main(int argc, char** argv){
