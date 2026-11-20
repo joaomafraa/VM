@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+#include <errno.h>
+#include <stdlib.h>
 
 typedef enum{
     FIFO,
@@ -18,7 +21,38 @@ int ler_algoritimo(char* texto, algoritimo *algoritimo){
     return 0;
 }
 
+int ler_enderecos(FILE* arquivo){
+    char linha[256];
+    int n_linha = 0;
 
+    while (fgets(linha,sizeof(linha), arquivo)!= NULL){
+        char *fim;
+        long endereco;
+
+        n_linha++;
+        errno=0;
+        endereco = strtol(linha, &fim,10);
+
+        if(fim == linha || errno == ERANGE){
+            fprintf(stderr,"erro endereco invalido na linha %d\n", n_linha);
+            return 0;
+        }
+        while (isspace((unsigned char)*fim)){
+            fim++;//permite espacos ou quebra de linah
+        }
+        if(*fim!='\0' || endereco <0 || endereco>65535){
+            fprintf(stderr,"Erro no endereço da linha %d\n",n_linha);
+            return 0;
+        }
+
+        if(ferror(arquivo)){
+            fprintf(stderr,"erro durante a leitura do arq\n");
+            return 0;
+        }
+        return 1;
+    }
+    return 1;
+}
 int main(int argc, char** argv){
     algoritimo algoritimo_paginas;  
     algoritimo algoritimo_tlb;
@@ -45,8 +79,12 @@ int main(int argc, char** argv){
         return 1;
     }
 
-    printf("ok %s %s",argv[2],argv[3]);
+    if(!ler_enderecos(arq_end)){
+        fclose(arq_end);
+        return 1;
+    }
 
     fclose(arq_end);
+    printf("ok");
     return 0;
 }
