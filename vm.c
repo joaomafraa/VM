@@ -27,6 +27,9 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas){
     char linha[256];
     int n_linha = 0;
     int proximo_frame=0;
+    int pagina_no_frame[NUM_FRAMES];
+    int proxima_vitima = 0;
+
     while (fgets(linha,sizeof(linha), arquivo)!= NULL){
         char *fim;
         long endereco;
@@ -49,19 +52,28 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas){
         long numero_pagina = endereco / 256;
         long deslocamento = endereco % 256;
         if(tabela_paginas[numero_pagina] == -1){
-            if(proximo_frame >= NUM_FRAMES){
-                fprintf(stderr,"Memoria cheia ");
-                return 0;
-            }
-            tabela_paginas[numero_pagina] = proximo_frame;
-            printf("pagina %ld carregada no frame %d\n", numero_pagina,proximo_frame);
-            proximo_frame++;
-        }else{
-            printf("pagina %ld encontrada no frame %d \n", numero_pagina, tabela_paginas[numero_pagina]);
-        }
+            int frame;
 
-        printf("Endereco: %ld | Pagina: %ld | Deslocamento: %ld\n",endereco, numero_pagina, deslocamento);
-    }
+            if(proximo_frame<NUM_FRAMES){
+                frame=proximo_frame;
+                proximo_frame++;
+            }
+            else{
+                frame=proxima_vitima;//substituir a antiga 
+                int pagina_removida=pagina_no_frame[frame];
+                tabela_paginas[pagina_removida] = -1;
+                printf("pagina %d removida no frame %d\n",pagina_removida,frame);
+                proxima_vitima = (proxima_vitima+1) % NUM_FRAMES; 
+            }
+            tabela_paginas[numero_pagina] = frame;
+            pagina_no_frame[frame] = numero_pagina;
+
+            printf("Endereco: %ld | Pagina: %ld | Deslocamento: %ld\n",endereco, numero_pagina, deslocamento);
+            printf("Pagina %ld carregada no frame %d\n",numero_pagina, frame);
+        }else{
+            printf("Pagina %ld encontrada no frame %d\n",numero_pagina, tabela_paginas[numero_pagina]);
+        }
+    }                                                                       
     if(ferror(arquivo)){
         fprintf(stderr,"erro durante a leitura do arq\n");
         return 0;
