@@ -107,4 +107,53 @@ Pagina 1 carregada no frame 1
 Pagina 0 encontrada no frame 0
 Endereco: 1024 | Pagina: 4 | Deslocamento: 0
 Pagina 4 carregada no frame 2
-ok[?2004h]0;joao@LaptopJoaoM: /m
+ok[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ make
+[?2004lcc -std=c11 -Wall -Wextra -Wpedantic -O2 vm.c -o vm
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ make./vm arquivo.txt lru fifo
+[?2004lEndereco: 1 | Pagina: 0 | Deslocamento: 1
+Pagina 0 carregada no frame 0
+Endereco: 256 | Pagina: 1 | Deslocamento: 0
+Pagina 1 carregada no frame 1
+Pagina 0 encontrada no frame 0
+Endereco: 1024 | Pagina: 4 | Deslocamento: 0
+Pagina 4 carregada no frame 2
+ok[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ ./vm arquivo.txt lru fifomake[K./vm arquivo.txt lru fifomake[K clean./vm arquivo.txt lru fifomake[K./vm arquivo.txt lru fifomake[K clean./vm arquivo.txt lru fifomake[K./vm arquivo.txt lru fifomake[K./vm arquivo.txt lru fifo[1@ [C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K clean./vm arquivo.txt lru fifomake[K clean./vm arquivo.txt lru fifomake[K[1Ppwddatewhoamiscript -a evidencias.logcode .[Kscript -a evidencias.log
+[?2004lScript started, output log file is 'evidencias.log'.
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaScript started on 2026-11-22 22:47:25-03:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="148" LINES="9"]
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ make clean./vm arquivo.txt lru fifo[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[7mmake[27m
+[7m./vm teste_memoria.txt fifo fifo[27m[Amake
+[1P./vm teste_memoria.txt fifo fif[K[K[K[K[K[K[K[K[K[K[KptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ make clean./vm arquivo.txt lru fifo[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[7mmake[27m
+[7m./vm teste_memoria.txt fifo fifo[27m[Amake
+[1P./vm teste_memoria.txt fifo fif[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A
+[?2004lcc -std=c11 -Wall -Wextra -Wpedantic -O2 vm.c -o vm
+[?2004h]0;joao@Lapto[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A
+[?2004lcc -std=c11 -Wall -Wextra -Wpedantic -O2 vm.c -o vm
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7m./vm teste_memoria.txt fifo fifo[27m./vm teste_memoria.txt fifo fifo
+[?2004lErro no endereço da linha 1
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJpJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7m./vm teste_memoria.txt fifo fifo[27m./vm teste_memoria.txt fifo fifo
+[?2004lErro no endereço da linha 1
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VMoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7mprintf '%s\n' 16916 62493 30198 53683 18295 > teste_memoria.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cprintf '%s\n' 16916 62493 30198 53683 18295 > teste_memoria.txt
+[?2004l[[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7mprintf '%s\n' 16916 62493 30198 53683 18295 > teste_memoria.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cprintf '%s\n' 16916 62493 30198 53683 18295 > teste_memoria.txt
+[?2004l[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ printf '%s\n' 16916 62493 30198 53683 18295 > teste_memoria.txt[C[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ printf '%s\n' 16916 62493 30198 53683 18295 > teste_memoria.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[31P./vm teste_memoria.txt fifo fifomake[K./vm teste_memoria.txt fifo fifo
+[?2004lEndereco: 16916 | Pagina: 66 | Deslocamento: 20
+Pagina 66 carregada no frame 0
+Endereco: 62493 | Pagina: 244 | Deslocamento: 29
+PagC[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[31P./vm teste_memoria.txt fifo fifomake[K./vm teste_memoria.txt fifo fifo
+[?2004lEndereco: 16916 | Pagina: 66 | Deslocamento: 20
+Pagina 66 carregada no frame 0
+Endereco: 62493 | Pagina: 244 | Deslocamento: 29
+Pagina 244 carregada no frame 1
+Endereco: 30198 | Pagina: 117 | Deslocamento: 246
+Pagina 117 carregada no frame 2
+Endereco: 53683 | Pagina: 209 | Deslocamento: 179
+Paina 244 carregada no frame 1
+Endereco: 30198 | Pagina: 117 | Deslocamento: 246
+Pagina 117 carregada no frame 2
+Endereco: 53683 | Pagina: 209 | Deslocamento: 179
+Pagina 209 carregada no frame 3
+Endereco: 18295 | Pagina: 71 | Deslocamento: 119
+Pagina 71 carregada no frame 4
+ok[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/cgina 209 carregada no frame 3
+Endereco: 18295 | Pagina: 71 | Deslocamento: 119
+Pagina 71 carregada no frame 4
+ok[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJ]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/coaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO

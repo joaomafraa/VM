@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #define NUM_PAGINAS 256
 #define NUM_FRAMES 128
+#define TAM_PAGINA 256
 
 typedef enum{
     FIFO,
@@ -23,12 +24,16 @@ int ler_algoritimo(char* texto, algoritimo *algoritimo){
     return 0;
 }
 
-int ler_enderecos(FILE* arquivo,int *tabela_paginas){
+int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_paginas,FILE *backing_store,
+   unsigned char memoria_fisica[NUM_FRAMES][TAM_PAGINA]){
+    
     char linha[256];
     int n_linha = 0;
     int proximo_frame=0;
     int pagina_no_frame[NUM_FRAMES];
     int proxima_vitima = 0;
+    long long ultimo_acesso[NUM_FRAMES] = {0};
+    long long contador_acessos = 0;
 
     while (fgets(linha,sizeof(linha), arquivo)!= NULL){
         char *fim;
@@ -59,11 +64,29 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas){
                 proximo_frame++;
             }
             else{
-                frame=proxima_vitima;//substituir a antiga 
-                int pagina_removida=pagina_no_frame[frame];
+                if(algoritimo_paginas==FIFO){
+                    frame = proxima_vitima;
+                    proxima_vitima= (proxima_vitima+1) %NUM_FRAMES;
+                }else{
+                    frame = 0;
+                    for(int i =1;i<NUM_FRAMES;i++){
+                        if(ultimo_acesso[i]<ultimo_acesso[frame]){
+                            frame=i;
+                        }
+                    }
+                }
+                int pagina_removida = pagina_no_frame[frame];
                 tabela_paginas[pagina_removida] = -1;
-                printf("pagina %d removida no frame %d\n",pagina_removida,frame);
-                proxima_vitima = (proxima_vitima+1) % NUM_FRAMES; 
+                printf("pagina %d removida do frame %d\n",pagina_removida, frame);
+            }
+            if(fseek(backing_store, numero_pagina * TAM_PAGINA, SEEK_SET) != 0){
+            fprintf(stderr, "Erro ao buscar a pagina %ld no BACKING_STORE.bin\n",numero_pagina);
+            return 0;
+            }
+
+            if(fread(memoria_fisica[frame], 1, TAM_PAGINA, backing_store) != TAM_PAGINA) {
+                fprintf(stderr, "Erro ao ler a pagina %ld do BACKING_STORE.bin\n",numero_pagina);
+                return 0;
             }
             tabela_paginas[numero_pagina] = frame;
             pagina_no_frame[frame] = numero_pagina;
@@ -73,6 +96,15 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas){
         }else{
             printf("Pagina %ld encontrada no frame %d\n",numero_pagina, tabela_paginas[numero_pagina]);
         }
+        contador_acessos++;
+        ultimo_acesso[tabela_paginas[numero_pagina]] = contador_acessos;
+        int frame_atual = tabela_paginas[numero_pagina];
+        long endereco_fisico = frame_atual * TAM_PAGINA + deslocamento;
+        int valor = memoria_fisica[frame_atual][deslocamento];
+        if(valor >= 128){
+            valor -= 256;
+        }
+        printf("Endereco fisico: %ld | Valor: %d\n",endereco_fisico, valor);
     }                                                                       
     if(ferror(arquivo)){
         fprintf(stderr,"erro durante a leitura do arq\n");
@@ -91,6 +123,9 @@ int main(int argc, char** argv){
     algoritimo algoritimo_tlb;
     FILE * arq_end;
     int tabela_paginas[NUM_PAGINAS];
+    unsigned char memoria_fisica[NUM_FRAMES][TAM_PAGINA];
+    FILE *backing_store;
+
     if(argc !=4){
         fprintf(stderr,"Parametros insuficientes\n");
         return 1;
@@ -111,13 +146,21 @@ int main(int argc, char** argv){
         perror("erro ao abrir arquivo de endereços\n");
         return 1;
     }
-    inicializar_tabela(tabela_paginas);
-    if(!ler_enderecos(arq_end,tabela_paginas)){
+    backing_store = fopen("BACKING_STORE.bin", "rb");
+
+    if(backing_store == NULL){
+        perror("Erro ao abrir BACKING_STORE.bin");
         fclose(arq_end);
         return 1;
     }
+    inicializar_tabela(tabela_paginas);
+    if(!ler_enderecos(arq_end,tabela_paginas,algoritimo_paginas,backing_store,memoria_fisica)){
+        fclose(arq_end);
+        fclose(backing_store);
+        return 1;
+    }
 
-
+    fclose(backing_store);
     fclose(arq_end);
     printf("ok");
     return 0;
