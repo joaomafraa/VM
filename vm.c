@@ -28,6 +28,14 @@ int ler_algoritimo(char* texto, algoritimo *algoritimo){
     }
     return 0;
 }
+int buscar_na_tlb(EntradaTLB tlb[], int pagina){
+    for(int i = 0; i < TAM_TLB; i++){
+        if (tlb[i].pagina == pagina){
+            return i;
+        }
+    }
+    return -1;
+}
 
 int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_paginas,FILE *backing_store,
    unsigned char memoria_fisica[NUM_FRAMES][TAM_PAGINA]){
@@ -66,6 +74,12 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
         }
         long numero_pagina = endereco / 256;
         long deslocamento = endereco % 256;
+        int indice_tlb = buscar_na_tlb(tlb, (int)numero_pagina);
+        if(indice_tlb == -1){
+            printf("Pagina %ld nao encontrada na TLB\n", numero_pagina);
+        }else{
+            printf("Pagina %ld encontrada na TLB, entrada %d\n",numero_pagina, indice_tlb);
+        }
         if(tabela_paginas[numero_pagina] == -1){
             int frame;
 
