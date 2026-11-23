@@ -6,11 +6,16 @@
 #define NUM_PAGINAS 256
 #define NUM_FRAMES 128
 #define TAM_PAGINA 256
+#define TAM_TLB 16
 
 typedef enum{
     FIFO,
     LRU
 }algoritimo;
+typedef struct{
+    int pagina;
+    int frame;
+}EntradaTLB;
 
 int ler_algoritimo(char* texto, algoritimo *algoritimo){
     if(strcmp(texto,"fifo")==0){
@@ -35,6 +40,11 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
     long long ultimo_acesso[NUM_FRAMES] = {0};
     long long contador_acessos = 0;
 
+    EntradaTLB tlb[TAM_TLB];
+    for(int i = 0; i < TAM_TLB; i++){
+        tlb[i].pagina = -1;
+        tlb[i].frame = -1;
+    }
     while (fgets(linha,sizeof(linha), arquivo)!= NULL){
         char *fim;
         long endereco;
