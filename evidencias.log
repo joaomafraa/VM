@@ -5180,4 +5180,53 @@ pagina 25 removida do frame 1
 Endereco: 45563 | Pagina: 177 | Deslocamento: 251
 Pagina 177 carregada no frame 1
 Endereco fisico: 507 | Valor: 126
-P
+PScript started on 2026-11-24 15:31:21-03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="131" LINES="20"]
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ grep "Pagina 0 .* na TLB" teste_lru.txtfifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./vm teste_tlb.txt fifo lru > teste_lru.txtfifo > teste_fifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[Kwhoami[3Ppwddate
+[?2004lTue Nov 24 15:31:24 -03 2026
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ dategrep "Pagina 0 .* na TLB" teste_lru.txtfifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./vm teste_tlb.txt fifo lru > teste_lru.txtfifo > teste_fifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[Kwhoami[3Ppwddatescript -a evidencias.logdate[K[1Ppwd
+[?2004l/mnt/c/SO/VM
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ pwddategrep "Pagina 0 .* na TLB" teste_lru.txtfifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./vm teste_tlb.txt fifo lru > teste_lru.txtfifo > teste_fifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[Kwhoami[3Ppwdwhoami
+[?2004ljoao
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7mfor i in $(seq 0 255); do echo $((i * 256)); done > paginas_256.txt[27m
+[7mcat paginas_256.txt paginas_256.txt > paginas_repetidas.txt[27m
+
+[7m./vm paginas_repetidas.txt fifo fifo > saida_256.txt[27m
+[7mtail -n 5 correct.txt[27m[A[A[A[A]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ for i in $(seq 0 255); do echo $((i * 256)); done > paginas_256.txt
+cat paginas_256.txt paginas_256.txt > paginas_repetidas.txt
+
+./vm paginas_repetidas.txt fifo fifo > saida_256.txt
+tail -n 5 correct.txt
+[?2004lNumber of Translated Addresses = 512
+Page Faults = 512
+Page Fault Rate = 1.000
+TLB Hits = 0
+TLB Hit Rate = 0.000
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ make
+[?2004lcc -Wall -Wextra -std=c11 -pthread vm.c -o vm
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ maketail -n 5 correct.txt./vm paginas_repetidas.txt fifo fifo > saida_256.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[31Ptail -n 5 correct.txtmake[K[K[7mfor i in $(seq 0 255); do echo $((i * 256)); done > paginas_256.txt[27m
+[7mcat paginas_256.txt paginas_256.txt > paginas_repetidas.txt[27m
+
+[7m./vm paginas_repetidas.txt fifo fifo > saida_256.txt[27m
+[7mtail -n 5 correct.txt[27m[A[A[A[A]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ for i in $(seq 0 255); do echo $((i * 256)); done > paginas_256.txt
+cat paginas_256.txt paginas_256.txt > paginas_repetidas.txt
+
+./vm paginas_repetidas.txt fifo fifo > saida_256.txt
+tail -n 5 correct.txt
+[?2004lNumber of Translated Addresses = 512
+Page Faults = 256
+Page Fault Rate = 0.500
+TLB Hits = 0
+TLB Hit Rate = 0.000
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7mgrep "removida do frame" saida_256.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep "removida do frame" saida_256.txt
+[?2004l[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7m./vm teste_tlb.txt fifo fifo > saida_fifo.txt[27m
+[7mgrep "Pagina 0 .* na TLB" saida_fifo.txt[27m
+
+[7m./vm teste_tlb.txt fifo lru > saida_lru.txt[27m
+[7mgrep "Pagina 0 .* na TLB" saida_lru.txt[27m[A[A[A[A./vm teste_tlb.txt fifo fifo > saida_fifo.txt
+grep "Pagina 0 .* na TLB" saida_fifo.txt
+
+./vm teste_tlb.txt fifo lru > saida_lru.txt
+grep "Pagina 0 .* na TLB" saida_lru.txt
+[?2004l[01;31m[KPagina 0 nao encontrada na TLB[m[K
+[01;31m[KPagina 0 encontrada na TLB[m[K, entrada 0
+[01;31m[KPagina 

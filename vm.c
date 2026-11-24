@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 #define NUM_PAGINAS 256
-#define NUM_FRAMES 128
+#define NUM_FRAMES 256
 #define TAM_PAGINA 256
 #define TAM_TLB 16
 
@@ -44,37 +44,12 @@ int ler_algoritimo(char* texto, algoritimo *algoritimo){
     return 0;
 }
 int buscar_na_tlb(EntradaTLB tlb[], int pagina){
-    pthread_t threads[TAM_TLB];
-    BuscaTLB buscas[TAM_TLB];
-    int criadas = 0;
-    int erro = 0;
     for(int i=0;i<TAM_TLB;i++){
-        buscas[i].tlb = tlb;
-        buscas[i].pagina = pagina;
-        buscas[i].indice = i;
-        buscas[i].encontrou = 0;
-        if(pthread_create(&threads[i], NULL, verificar_entrada_tlb, &buscas[i]) != 0){
-            fprintf(stderr, "Erro ao criar thread da TLB\n");
-            erro = 1;
-            break;
-        }
-
-        criadas++;
-    }
-    for(int i=0;i<criadas;i++){
-        if(pthread_join(threads[i], NULL) != 0){
-            fprintf(stderr, "Erro ao aguardar thread da TLB\n");
-            exit(EXIT_FAILURE);
-        }
-    }
-    if(erro){
-        return -2;
-    }
-    for(int i=0;i<TAM_TLB;i++){
-        if(buscas[i].encontrou){
+        if(tlb[i].pagina == pagina){
             return i;
         }
     }
+
     return -1;
 }
 
