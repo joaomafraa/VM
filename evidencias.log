@@ -195,4 +195,1078 @@ Script done.
 [01;31m[KPagina 0 nao encontrada na TLB[m[K
 [01;31m[KPagina 0 nao encontrada na TLB[m[K
 [01;31m[KPagina 0 encontrada na TLB[m[K, entrada 0
-[01;31m[KPagina 0 encontrada na TLB[m[K
+[01;31m[KPagina 0 encontrada na TLB[m[KScript started on 2026-11-24 09:11:45-03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="148" LINES="15"]
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ grep "Pagina 0 .* na TLB" teste_lru.txtfifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./vm teste_tlb.txt fifo lru > teste_lru.txtfifo > teste_fifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[Kwhoami[3Ppwddate
+[?2004lTue Nov 24 09:11:48 -03 2026
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ dategrep "Pagina 0 .* na TLB" teste_lru.txtfifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./vm teste_tlb.txt fifo lru > teste_lru.txtfifo > teste_fifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[Kwhoami[3Ppwd
+[?2004l/mnt/c/SO/VM
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ pwddategrep "Pagina 0 .* na TLB" teste_lru.txtfifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./vm teste_tlb.txt fifo lru > teste_lru.txtfifo > teste_fifo.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[Kwhoami
+[?2004ljoao
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ make
+[?2004lcc -Wall -Wextra -std=c11 -pthread vm.c -o vm
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7m./vm teste_tlb.txt fifo fifo > teste_fifo.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./vm teste_tlb.txt fifo fifo > teste_fifo.txt
+[?2004l[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7m./vm teste_tlb.txt fifo lru > teste_lru.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./vm teste_tlb.txt fifo lru > teste_lru.txt
+[?2004l[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7mecho "Resultado FIFO:"[27mecho "Resultado FIFO:"
+[?2004lResultado FIFO:
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7mgrep "Pagina 0 .* na TLB" teste_fifo.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep "Pagina 0 .* na TLB" teste_fifo.txt
+[?2004l[01;31m[KPagina 0 nao encontrada na TLB[m[K
+[01;31m[KPagina 0 encontrada na TLB[m[K, entrada 0
+[01;31m[KPagina 0 nao encontrada na TLB[m[K
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7mecho "Resultado LRU:"[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cecho "Resultado LRU:"
+[A
+[?2004lResultado LRU:
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7mgrep "Pagina 0 .* na TLB" teste_lru.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep "Pagina 0 .* na TLB" teste_lru.txt
+[?2004l[01;31m[KPagina 0 nao encontrada na TLB[m[K
+[01;31m[KPagina 0 encontrada na TLB[m[K, entrada 0
+[01;31m[KPagina 0 encontrada na TLB[m[K, entrada 0
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7mfor i in $(seq 0 127); do echo $((i * 256)); done > teste_paginas.txt[27m
+[7mecho 0 >> teste_paginas.txt[27m
+[7mecho 32768 >> teste_paginas.txt[27m
+[7mecho 0 >> teste_paginas.txt[27m[A[A[A]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ for i in $(seq 0 127); do echo $((i * 256)); done > teste_paginas.txt
+echo 0 >> teste_paginas.txt
+echo 32768 >> teste_paginas.txt
+echo 0 >> teste_paginas.txt
+[?2004l[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7m./vm teste_paginas.txt fifo fifo[27m./vm teste_paginas.txt fifo fifo
+[?2004lPagina 0 nao encontrada na TLB
+Endereco: 0 | Pagina: 0 | Deslocamento: 0
+Pagina 0 carregada no frame 0
+Endereco fisico: 0 | Valor: 0
+Pagina 1 nao encontrada na TLB
+Endereco: 256 | Pagina: 1 | Deslocamento: 0
+Pagina 1 carregada no frame 1
+Endereco fisico: 256 | Valor: 0
+Pagina 2 nao encontrada na TLB
+Endereco: 512 | Pagina: 2 | Deslocamento: 0
+Pagina 2 carregada no frame 2
+Endereco fisico: 512 | Valor: 0
+Pagina 3 nao encontrada na TLB
+Endereco: 768 | Pagina: 3 | Deslocamento: 0
+Pagina 3 carregada no frame 3
+Endereco fisico: 768 | Valor: 0
+Pagina 4 nao encontrada na TLB
+Endereco: 1024 | Pagina: 4 | Deslocamento: 0
+Pagina 4 carregada no frame 4
+Endereco fisico: 1024 | Valor: 0
+Pagina 5 nao encontrada na TLB
+Endereco: 1280 | Pagina: 5 | Deslocamento: 0
+Pagina 5 carregada no frame 5
+Endereco fisico: 1280 | Valor: 0
+Pagina 6 nao encontrada na TLB
+Endereco: 1536 | Pagina: 6 | Deslocamento: 0
+Pagina 6 carregada no frame 6
+Endereco fisico: 1536 | Valor: 0
+Pagina 7 nao encontrada na TLB
+Endereco: 1792 | Pagina: 7 | Deslocamento: 0
+Pagina 7 carregada no frame 7
+Endereco fisico: 1792 | Valor: 0
+Pagina 8 nao encontrada na TLB
+Endereco: 2048 | Pagina: 8 | Deslocamento: 0
+Pagina 8 carregada no frame 8
+Endereco fisico: 2048 | Valor: 0
+Pagina 9 nao encontrada na TLB
+Endereco: 2304 | Pagina: 9 | Deslocamento: 0
+Pagina 9 carregada no frame 9
+Endereco fisico: 2304 | Valor: 0
+Pagina 10 nao encontrada na TLB
+Endereco: 2560 | Pagina: 10 | Deslocamento: 0
+Pagina 10 carregada no frame 10
+Endereco fisico: 2560 | Valor: 0
+Pagina 11 nao encontrada na TLB
+Endereco: 2816 | Pagina: 11 | Deslocamento: 0
+Pagina 11 carregada no frame 11
+Endereco fisico: 2816 | Valor: 0
+Pagina 12 nao encontrada na TLB
+Endereco: 3072 | Pagina: 12 | Deslocamento: 0
+Pagina 12 carregada no frame 12
+Endereco fisico: 3072 | Valor: 0
+Pagina 13 nao encontrada na TLB
+Endereco: 3328 | Pagina: 13 | Deslocamento: 0
+Pagina 13 carregada no frame 13
+Endereco fisico: 3328 | Valor: 0
+Pagina 14 nao encontrada na TLB
+Endereco: 3584 | Pagina: 14 | Deslocamento: 0
+Pagina 14 carregada no frame 14
+Endereco fisico: 3584 | Valor: 0
+Pagina 15 nao encontrada na TLB
+Endereco: 3840 | Pagina: 15 | Deslocamento: 0
+Pagina 15 carregada no frame 15
+Endereco fisico: 3840 | Valor: 0
+Pagina 16 nao encontrada na TLB
+Endereco: 4096 | Pagina: 16 | Deslocamento: 0
+Pagina 16 carregada no frame 16
+Endereco fisico: 4096 | Valor: 0
+Pagina 17 nao encontrada na TLB
+Endereco: 4352 | Pagina: 17 | Deslocamento: 0
+Pagina 17 carregada no frame 17
+Endereco fisico: 4352 | Valor: 0
+Pagina 18 nao encontrada na TLB
+Endereco: 4608 | Pagina: 18 | Deslocamento: 0
+Pagina 18 carregada no frame 18
+Endereco fisico: 4608 | Valor: 0
+Pagina 19 nao encontrada na TLB
+Endereco: 4864 | Pagina: 19 | Deslocamento: 0
+Pagina 19 carregada no frame 19
+Endereco fisico: 4864 | Valor: 0
+Pagina 20 nao encontrada na TLB
+Endereco: 5120 | Pagina: 20 | Deslocamento: 0
+Pagina 20 carregada no frame 20
+Endereco fisico: 5120 | Valor: 0
+Pagina 21 nao encontrada na TLB
+Endereco: 5376 | Pagina: 21 | Deslocamento: 0
+Pagina 21 carregada no frame 21
+Endereco fisico: 5376 | Valor: 0
+Pagina 22 nao encontrada na TLB
+Endereco: 5632 | Pagina: 22 | Deslocamento: 0
+Pagina 22 carregada no frame 22
+Endereco fisico: 5632 | Valor: 0
+Pagina 23 nao encontrada na TLB
+Endereco: 5888 | Pagina: 23 | Deslocamento: 0
+Pagina 23 carregada no frame 23
+Endereco fisico: 5888 | Valor: 0
+Pagina 24 nao encontrada na TLB
+Endereco: 6144 | Pagina: 24 | Deslocamento: 0
+Pagina 24 carregada no frame 24
+Endereco fisico: 6144 | Valor: 0
+Pagina 25 nao encontrada na TLB
+Endereco: 6400 | Pagina: 25 | Deslocamento: 0
+Pagina 25 carregada no frame 25
+Endereco fisico: 6400 | Valor: 0
+Pagina 26 nao encontrada na TLB
+Endereco: 6656 | Pagina: 26 | Deslocamento: 0
+Pagina 26 carregada no frame 26
+Endereco fisico: 6656 | Valor: 0
+Pagina 27 nao encontrada na TLB
+Endereco: 6912 | Pagina: 27 | Deslocamento: 0
+Pagina 27 carregada no frame 27
+Endereco fisico: 6912 | Valor: 0
+Pagina 28 nao encontrada na TLB
+Endereco: 7168 | Pagina: 28 | Deslocamento: 0
+Pagina 28 carregada no frame 28
+Endereco fisico: 7168 | Valor: 0
+Pagina 29 nao encontrada na TLB
+Endereco: 7424 | Pagina: 29 | Deslocamento: 0
+Pagina 29 carregada no frame 29
+Endereco fisico: 7424 | Valor: 0
+Pagina 30 nao encontrada na TLB
+Endereco: 7680 | Pagina: 30 | Deslocamento: 0
+Pagina 30 carregada no frame 30
+Endereco fisico: 7680 | Valor: 0
+Pagina 31 nao encontrada na TLB
+Endereco: 7936 | Pagina: 31 | Deslocamento: 0
+Pagina 31 carregada no frame 31
+Endereco fisico: 7936 | Valor: 0
+Pagina 32 nao encontrada na TLB
+Endereco: 8192 | Pagina: 32 | Deslocamento: 0
+Pagina 32 carregada no frame 32
+Endereco fisico: 8192 | Valor: 0
+Pagina 33 nao encontrada na TLB
+Endereco: 8448 | Pagina: 33 | Deslocamento: 0
+Pagina 33 carregada no frame 33
+Endereco fisico: 8448 | Valor: 0
+Pagina 34 nao encontrada na TLB
+Endereco: 8704 | Pagina: 34 | Deslocamento: 0
+Pagina 34 carregada no frame 34
+Endereco fisico: 8704 | Valor: 0
+Pagina 35 nao encontrada na TLB
+Endereco: 8960 | Pagina: 35 | Deslocamento: 0
+Pagina 35 carregada no frame 35
+Endereco fisico: 8960 | Valor: 0
+Pagina 36 nao encontrada na TLB
+Endereco: 9216 | Pagina: 36 | Deslocamento: 0
+Pagina 36 carregada no frame 36
+Endereco fisico: 9216 | Valor: 0
+Pagina 37 nao encontrada na TLB
+Endereco: 9472 | Pagina: 37 | Deslocamento: 0
+Pagina 37 carregada no frame 37
+Endereco fisico: 9472 | Valor: 0
+Pagina 38 nao encontrada na TLB
+Endereco: 9728 | Pagina: 38 | Deslocamento: 0
+Pagina 38 carregada no frame 38
+Endereco fisico: 9728 | Valor: 0
+Pagina 39 nao encontrada na TLB
+Endereco: 9984 | Pagina: 39 | Deslocamento: 0
+Pagina 39 carregada no frame 39
+Endereco fisico: 9984 | Valor: 0
+Pagina 40 nao encontrada na TLB
+Endereco: 10240 | Pagina: 40 | Deslocamento: 0
+Pagina 40 carregada no frame 40
+Endereco fisico: 10240 | Valor: 0
+Pagina 41 nao encontrada na TLB
+Endereco: 10496 | Pagina: 41 | Deslocamento: 0
+Pagina 41 carregada no frame 41
+Endereco fisico: 10496 | Valor: 0
+Pagina 42 nao encontrada na TLB
+Endereco: 10752 | Pagina: 42 | Deslocamento: 0
+Pagina 42 carregada no frame 42
+Endereco fisico: 10752 | Valor: 0
+Pagina 43 nao encontrada na TLB
+Endereco: 11008 | Pagina: 43 | Deslocamento: 0
+Pagina 43 carregada no frame 43
+Endereco fisico: 11008 | Valor: 0
+Pagina 44 nao encontrada na TLB
+Endereco: 11264 | Pagina: 44 | Deslocamento: 0
+Pagina 44 carregada no frame 44
+Endereco fisico: 11264 | Valor: 0
+Pagina 45 nao encontrada na TLB
+Endereco: 11520 | Pagina: 45 | Deslocamento: 0
+Pagina 45 carregada no frame 45
+Endereco fisico: 11520 | Valor: 0
+Pagina 46 nao encontrada na TLB
+Endereco: 11776 | Pagina: 46 | Deslocamento: 0
+Pagina 46 carregada no frame 46
+Endereco fisico: 11776 | Valor: 0
+Pagina 47 nao encontrada na TLB
+Endereco: 12032 | Pagina: 47 | Deslocamento: 0
+Pagina 47 carregada no frame 47
+Endereco fisico: 12032 | Valor: 0
+Pagina 48 nao encontrada na TLB
+Endereco: 12288 | Pagina: 48 | Deslocamento: 0
+Pagina 48 carregada no frame 48
+Endereco fisico: 12288 | Valor: 0
+Pagina 49 nao encontrada na TLB
+Endereco: 12544 | Pagina: 49 | Deslocamento: 0
+Pagina 49 carregada no frame 49
+Endereco fisico: 12544 | Valor: 0
+Pagina 50 nao encontrada na TLB
+Endereco: 12800 | Pagina: 50 | Deslocamento: 0
+Pagina 50 carregada no frame 50
+Endereco fisico: 12800 | Valor: 0
+Pagina 51 nao encontrada na TLB
+Endereco: 13056 | Pagina: 51 | Deslocamento: 0
+Pagina 51 carregada no frame 51
+Endereco fisico: 13056 | Valor: 0
+Pagina 52 nao encontrada na TLB
+Endereco: 13312 | Pagina: 52 | Deslocamento: 0
+Pagina 52 carregada no frame 52
+Endereco fisico: 13312 | Valor: 0
+Pagina 53 nao encontrada na TLB
+Endereco: 13568 | Pagina: 53 | Deslocamento: 0
+Pagina 53 carregada no frame 53
+Endereco fisico: 13568 | Valor: 0
+Pagina 54 nao encontrada na TLB
+Endereco: 13824 | Pagina: 54 | Deslocamento: 0
+Pagina 54 carregada no frame 54
+Endereco fisico: 13824 | Valor: 0
+Pagina 55 nao encontrada na TLB
+Endereco: 14080 | Pagina: 55 | Deslocamento: 0
+Pagina 55 carregada no frame 55
+Endereco fisico: 14080 | Valor: 0
+Pagina 56 nao encontrada na TLB
+Endereco: 14336 | Pagina: 56 | Deslocamento: 0
+Pagina 56 carregada no frame 56
+Endereco fisico: 14336 | Valor: 0
+Pagina 57 nao encontrada na TLB
+Endereco: 14592 | Pagina: 57 | Deslocamento: 0
+Pagina 57 carregada no frame 57
+Endereco fisico: 14592 | Valor: 0
+Pagina 58 nao encontrada na TLB
+Endereco: 14848 | Pagina: 58 | Deslocamento: 0
+Pagina 58 carregada no frame 58
+Endereco fisico: 14848 | Valor: 0
+Pagina 59 nao encontrada na TLB
+Endereco: 15104 | Pagina: 59 | Deslocamento: 0
+Pagina 59 carregada no frame 59
+Endereco fisico: 15104 | Valor: 0
+Pagina 60 nao encontrada na TLB
+Endereco: 15360 | Pagina: 60 | Deslocamento: 0
+Pagina 60 carregada no frame 60
+Endereco fisico: 15360 | Valor: 0
+Pagina 61 nao encontrada na TLB
+Endereco: 15616 | Pagina: 61 | Deslocamento: 0
+Pagina 61 carregada no frame 61
+Endereco fisico: 15616 | Valor: 0
+Pagina 62 nao encontrada na TLB
+Endereco: 15872 | Pagina: 62 | Deslocamento: 0
+Pagina 62 carregada no frame 62
+Endereco fisico: 15872 | Valor: 0
+Pagina 63 nao encontrada na TLB
+Endereco: 16128 | Pagina: 63 | Deslocamento: 0
+Pagina 63 carregada no frame 63
+Endereco fisico: 16128 | Valor: 0
+Pagina 64 nao encontrada na TLB
+Endereco: 16384 | Pagina: 64 | Deslocamento: 0
+Pagina 64 carregada no frame 64
+Endereco fisico: 16384 | Valor: 0
+Pagina 65 nao encontrada na TLB
+Endereco: 16640 | Pagina: 65 | Deslocamento: 0
+Pagina 65 carregada no frame 65
+Endereco fisico: 16640 | Valor: 0
+Pagina 66 nao encontrada na TLB
+Endereco: 16896 | Pagina: 66 | Deslocamento: 0
+Pagina 66 carregada no frame 66
+Endereco fisico: 16896 | Valor: 0
+Pagina 67 nao encontrada na TLB
+Endereco: 17152 | Pagina: 67 | Deslocamento: 0
+Pagina 67 carregada no frame 67
+Endereco fisico: 17152 | Valor: 0
+Pagina 68 nao encontrada na TLB
+Endereco: 17408 | Pagina: 68 | Deslocamento: 0
+Pagina 68 carregada no frame 68
+Endereco fisico: 17408 | Valor: 0
+Pagina 69 nao encontrada na TLB
+Endereco: 17664 | Pagina: 69 | Deslocamento: 0
+Pagina 69 carregada no frame 69
+Endereco fisico: 17664 | Valor: 0
+Pagina 70 nao encontrada na TLB
+Endereco: 17920 | Pagina: 70 | Deslocamento: 0
+Pagina 70 carregada no frame 70
+Endereco fisico: 17920 | Valor: 0
+Pagina 71 nao encontrada na TLB
+Endereco: 18176 | Pagina: 71 | Deslocamento: 0
+Pagina 71 carregada no frame 71
+Endereco fisico: 18176 | Valor: 0
+Pagina 72 nao encontrada na TLB
+Endereco: 18432 | Pagina: 72 | Deslocamento: 0
+Pagina 72 carregada no frame 72
+Endereco fisico: 18432 | Valor: 0
+Pagina 73 nao encontrada na TLB
+Endereco: 18688 | Pagina: 73 | Deslocamento: 0
+Pagina 73 carregada no frame 73
+Endereco fisico: 18688 | Valor: 0
+Pagina 74 nao encontrada na TLB
+Endereco: 18944 | Pagina: 74 | Deslocamento: 0
+Pagina 74 carregada no frame 74
+Endereco fisico: 18944 | Valor: 0
+Pagina 75 nao encontrada na TLB
+Endereco: 19200 | Pagina: 75 | Deslocamento: 0
+Pagina 75 carregada no frame 75
+Endereco fisico: 19200 | Valor: 0
+Pagina 76 nao encontrada na TLB
+Endereco: 19456 | Pagina: 76 | Deslocamento: 0
+Pagina 76 carregada no frame 76
+Endereco fisico: 19456 | Valor: 0
+Pagina 77 nao encontrada na TLB
+Endereco: 19712 | Pagina: 77 | Deslocamento: 0
+Pagina 77 carregada no frame 77
+Endereco fisico: 19712 | Valor: 0
+Pagina 78 nao encontrada na TLB
+Endereco: 19968 | Pagina: 78 | Deslocamento: 0
+Pagina 78 carregada no frame 78
+Endereco fisico: 19968 | Valor: 0
+Pagina 79 nao encontrada na TLB
+Endereco: 20224 | Pagina: 79 | Deslocamento: 0
+Pagina 79 carregada no frame 79
+Endereco fisico: 20224 | Valor: 0
+Pagina 80 nao encontrada na TLB
+Endereco: 20480 | Pagina: 80 | Deslocamento: 0
+Pagina 80 carregada no frame 80
+Endereco fisico: 20480 | Valor: 0
+Pagina 81 nao encontrada na TLB
+Endereco: 20736 | Pagina: 81 | Deslocamento: 0
+Pagina 81 carregada no frame 81
+Endereco fisico: 20736 | Valor: 0
+Pagina 82 nao encontrada na TLB
+Endereco: 20992 | Pagina: 82 | Deslocamento: 0
+Pagina 82 carregada no frame 82
+Endereco fisico: 20992 | Valor: 0
+Pagina 83 nao encontrada na TLB
+Endereco: 21248 | Pagina: 83 | Deslocamento: 0
+Pagina 83 carregada no frame 83
+Endereco fisico: 21248 | Valor: 0
+Pagina 84 nao encontrada na TLB
+Endereco: 21504 | Pagina: 84 | Deslocamento: 0
+Pagina 84 carregada no frame 84
+Endereco fisico: 21504 | Valor: 0
+Pagina 85 nao encontrada na TLB
+Endereco: 21760 | Pagina: 85 | Deslocamento: 0
+Pagina 85 carregada no frame 85
+Endereco fisico: 21760 | Valor: 0
+Pagina 86 nao encontrada na TLB
+Endereco: 22016 | Pagina: 86 | Deslocamento: 0
+Pagina 86 carregada no frame 86
+Endereco fisico: 22016 | Valor: 0
+Pagina 87 nao encontrada na TLB
+Endereco: 22272 | Pagina: 87 | Deslocamento: 0
+Pagina 87 carregada no frame 87
+Endereco fisico: 22272 | Valor: 0
+Pagina 88 nao encontrada na TLB
+Endereco: 22528 | Pagina: 88 | Deslocamento: 0
+Pagina 88 carregada no frame 88
+Endereco fisico: 22528 | Valor: 0
+Pagina 89 nao encontrada na TLB
+Endereco: 22784 | Pagina: 89 | Deslocamento: 0
+Pagina 89 carregada no frame 89
+Endereco fisico: 22784 | Valor: 0
+Pagina 90 nao encontrada na TLB
+Endereco: 23040 | Pagina: 90 | Deslocamento: 0
+Pagina 90 carregada no frame 90
+Endereco fisico: 23040 | Valor: 0
+Pagina 91 nao encontrada na TLB
+Endereco: 23296 | Pagina: 91 | Deslocamento: 0
+Pagina 91 carregada no frame 91
+Endereco fisico: 23296 | Valor: 0
+Pagina 92 nao encontrada na TLB
+Endereco: 23552 | Pagina: 92 | Deslocamento: 0
+Pagina 92 carregada no frame 92
+Endereco fisico: 23552 | Valor: 0
+Pagina 93 nao encontrada na TLB
+Endereco: 23808 | Pagina: 93 | Deslocamento: 0
+Pagina 93 carregada no frame 93
+Endereco fisico: 23808 | Valor: 0
+Pagina 94 nao encontrada na TLB
+Endereco: 24064 | Pagina: 94 | Deslocamento: 0
+Pagina 94 carregada no frame 94
+Endereco fisico: 24064 | Valor: 0
+Pagina 95 nao encontrada na TLB
+Endereco: 24320 | Pagina: 95 | Deslocamento: 0
+Pagina 95 carregada no frame 95
+Endereco fisico: 24320 | Valor: 0
+Pagina 96 nao encontrada na TLB
+Endereco: 24576 | Pagina: 96 | Deslocamento: 0
+Pagina 96 carregada no frame 96
+Endereco fisico: 24576 | Valor: 0
+Pagina 97 nao encontrada na TLB
+Endereco: 24832 | Pagina: 97 | Deslocamento: 0
+Pagina 97 carregada no frame 97
+Endereco fisico: 24832 | Valor: 0
+Pagina 98 nao encontrada na TLB
+Endereco: 25088 | Pagina: 98 | Deslocamento: 0
+Pagina 98 carregada no frame 98
+Endereco fisico: 25088 | Valor: 0
+Pagina 99 nao encontrada na TLB
+Endereco: 25344 | Pagina: 99 | Deslocamento: 0
+Pagina 99 carregada no frame 99
+Endereco fisico: 25344 | Valor: 0
+Pagina 100 nao encontrada na TLB
+Endereco: 25600 | Pagina: 100 | Deslocamento: 0
+Pagina 100 carregada no frame 100
+Endereco fisico: 25600 | Valor: 0
+Pagina 101 nao encontrada na TLB
+Endereco: 25856 | Pagina: 101 | Deslocamento: 0
+Pagina 101 carregada no frame 101
+Endereco fisico: 25856 | Valor: 0
+Pagina 102 nao encontrada na TLB
+Endereco: 26112 | Pagina: 102 | Deslocamento: 0
+Pagina 102 carregada no frame 102
+Endereco fisico: 26112 | Valor: 0
+Pagina 103 nao encontrada na TLB
+Endereco: 26368 | Pagina: 103 | Deslocamento: 0
+Pagina 103 carregada no frame 103
+Endereco fisico: 26368 | Valor: 0
+Pagina 104 nao encontrada na TLB
+Endereco: 26624 | Pagina: 104 | Deslocamento: 0
+Pagina 104 carregada no frame 104
+Endereco fisico: 26624 | Valor: 0
+Pagina 105 nao encontrada na TLB
+Endereco: 26880 | Pagina: 105 | Deslocamento: 0
+Pagina 105 carregada no frame 105
+Endereco fisico: 26880 | Valor: 0
+Pagina 106 nao encontrada na TLB
+Endereco: 27136 | Pagina: 106 | Deslocamento: 0
+Pagina 106 carregada no frame 106
+Endereco fisico: 27136 | Valor: 0
+Pagina 107 nao encontrada na TLB
+Endereco: 27392 | Pagina: 107 | Deslocamento: 0
+Pagina 107 carregada no frame 107
+Endereco fisico: 27392 | Valor: 0
+Pagina 108 nao encontrada na TLB
+Endereco: 27648 | Pagina: 108 | Deslocamento: 0
+Pagina 108 carregada no frame 108
+Endereco fisico: 27648 | Valor: 0
+Pagina 109 nao encontrada na TLB
+Endereco: 27904 | Pagina: 109 | Deslocamento: 0
+Pagina 109 carregada no frame 109
+Endereco fisico: 27904 | Valor: 0
+Pagina 110 nao encontrada na TLB
+Endereco: 28160 | Pagina: 110 | Deslocamento: 0
+Pagina 110 carregada no frame 110
+Endereco fisico: 28160 | Valor: 0
+Pagina 111 nao encontrada na TLB
+Endereco: 28416 | Pagina: 111 | Deslocamento: 0
+Pagina 111 carregada no frame 111
+Endereco fisico: 28416 | Valor: 0
+Pagina 112 nao encontrada na TLB
+Endereco: 28672 | Pagina: 112 | Deslocamento: 0
+Pagina 112 carregada no frame 112
+Endereco fisico: 28672 | Valor: 0
+Pagina 113 nao encontrada na TLB
+Endereco: 28928 | Pagina: 113 | Deslocamento: 0
+Pagina 113 carregada no frame 113
+Endereco fisico: 28928 | Valor: 0
+Pagina 114 nao encontrada na TLB
+Endereco: 29184 | Pagina: 114 | Deslocamento: 0
+Pagina 114 carregada no frame 114
+Endereco fisico: 29184 | Valor: 0
+Pagina 115 nao encontrada na TLB
+Endereco: 29440 | Pagina: 115 | Deslocamento: 0
+Pagina 115 carregada no frame 115
+Endereco fisico: 29440 | Valor: 0
+Pagina 116 nao encontrada na TLB
+Endereco: 29696 | Pagina: 116 | Deslocamento: 0
+Pagina 116 carregada no frame 116
+Endereco fisico: 29696 | Valor: 0
+Pagina 117 nao encontrada na TLB
+Endereco: 29952 | Pagina: 117 | Deslocamento: 0
+Pagina 117 carregada no frame 117
+Endereco fisico: 29952 | Valor: 0
+Pagina 118 nao encontrada na TLB
+Endereco: 30208 | Pagina: 118 | Deslocamento: 0
+Pagina 118 carregada no frame 118
+Endereco fisico: 30208 | Valor: 0
+Pagina 119 nao encontrada na TLB
+Endereco: 30464 | Pagina: 119 | Deslocamento: 0
+Pagina 119 carregada no frame 119
+Endereco fisico: 30464 | Valor: 0
+Pagina 120 nao encontrada na TLB
+Endereco: 30720 | Pagina: 120 | Deslocamento: 0
+Pagina 120 carregada no frame 120
+Endereco fisico: 30720 | Valor: 0
+Pagina 121 nao encontrada na TLB
+Endereco: 30976 | Pagina: 121 | Deslocamento: 0
+Pagina 121 carregada no frame 121
+Endereco fisico: 30976 | Valor: 0
+Pagina 122 nao encontrada na TLB
+Endereco: 31232 | Pagina: 122 | Deslocamento: 0
+Pagina 122 carregada no frame 122
+Endereco fisico: 31232 | Valor: 0
+Pagina 123 nao encontrada na TLB
+Endereco: 31488 | Pagina: 123 | Deslocamento: 0
+Pagina 123 carregada no frame 123
+Endereco fisico: 31488 | Valor: 0
+Pagina 124 nao encontrada na TLB
+Endereco: 31744 | Pagina: 124 | Deslocamento: 0
+Pagina 124 carregada no frame 124
+Endereco fisico: 31744 | Valor: 0
+Pagina 125 nao encontrada na TLB
+Endereco: 32000 | Pagina: 125 | Deslocamento: 0
+Pagina 125 carregada no frame 125
+Endereco fisico: 32000 | Valor: 0
+Pagina 126 nao encontrada na TLB
+Endereco: 32256 | Pagina: 126 | Deslocamento: 0
+Pagina 126 carregada no frame 126
+Endereco fisico: 32256 | Valor: 0
+Pagina 127 nao encontrada na TLB
+Endereco: 32512 | Pagina: 127 | Deslocamento: 0
+Pagina 127 carregada no frame 127
+Endereco fisico: 32512 | Valor: 0
+Pagina 0 nao encontrada na TLB
+Pagina 0 encontrada no frame 0
+Endereco fisico: 0 | Valor: 0
+Pagina 128 nao encontrada na TLB
+pagina 0 removida do frame 0
+Endereco: 32768 | Pagina: 128 | Deslocamento: 0
+Pagina 128 carregada no frame 0
+Endereco fisico: 0 | Valor: 0
+Pagina 0 nao encontrada na TLB
+pagina 1 removida do frame 1
+Endereco: 0 | Pagina: 0 | Deslocamento: 0
+Pagina 0 carregada no frame 1
+Endereco fisico: 256 | Valor: 0
+ok[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7m./vm teste_paginas.txt lru fifo[27m./vm teste_paginas.txt lru fifo
+[?2004lPagina 0 nao encontrada na TLB
+Endereco: 0 | Pagina: 0 | Deslocamento: 0
+Pagina 0 carregada no frame 0
+Endereco fisico: 0 | Valor: 0
+Pagina 1 nao encontrada na TLB
+Endereco: 256 | Pagina: 1 | Deslocamento: 0
+Pagina 1 carregada no frame 1
+Endereco fisico: 256 | Valor: 0
+Pagina 2 nao encontrada na TLB
+Endereco: 512 | Pagina: 2 | Deslocamento: 0
+Pagina 2 carregada no frame 2
+Endereco fisico: 512 | Valor: 0
+Pagina 3 nao encontrada na TLB
+Endereco: 768 | Pagina: 3 | Deslocamento: 0
+Pagina 3 carregada no frame 3
+Endereco fisico: 768 | Valor: 0
+Pagina 4 nao encontrada na TLB
+Endereco: 1024 | Pagina: 4 | Deslocamento: 0
+Pagina 4 carregada no frame 4
+Endereco fisico: 1024 | Valor: 0
+Pagina 5 nao encontrada na TLB
+Endereco: 1280 | Pagina: 5 | Deslocamento: 0
+Pagina 5 carregada no frame 5
+Endereco fisico: 1280 | Valor: 0
+Pagina 6 nao encontrada na TLB
+Endereco: 1536 | Pagina: 6 | Deslocamento: 0
+Pagina 6 carregada no frame 6
+Endereco fisico: 1536 | Valor: 0
+Pagina 7 nao encontrada na TLB
+Endereco: 1792 | Pagina: 7 | Deslocamento: 0
+Pagina 7 carregada no frame 7
+Endereco fisico: 1792 | Valor: 0
+Pagina 8 nao encontrada na TLB
+Endereco: 2048 | Pagina: 8 | Deslocamento: 0
+Pagina 8 carregada no frame 8
+Endereco fisico: 2048 | Valor: 0
+Pagina 9 nao encontrada na TLB
+Endereco: 2304 | Pagina: 9 | Deslocamento: 0
+Pagina 9 carregada no frame 9
+Endereco fisico: 2304 | Valor: 0
+Pagina 10 nao encontrada na TLB
+Endereco: 2560 | Pagina: 10 | Deslocamento: 0
+Pagina 10 carregada no frame 10
+Endereco fisico: 2560 | Valor: 0
+Pagina 11 nao encontrada na TLB
+Endereco: 2816 | Pagina: 11 | Deslocamento: 0
+Pagina 11 carregada no frame 11
+Endereco fisico: 2816 | Valor: 0
+Pagina 12 nao encontrada na TLB
+Endereco: 3072 | Pagina: 12 | Deslocamento: 0
+Pagina 12 carregada no frame 12
+Endereco fisico: 3072 | Valor: 0
+Pagina 13 nao encontrada na TLB
+Endereco: 3328 | Pagina: 13 | Deslocamento: 0
+Pagina 13 carregada no frame 13
+Endereco fisico: 3328 | Valor: 0
+Pagina 14 nao encontrada na TLB
+Endereco: 3584 | Pagina: 14 | Deslocamento: 0
+Pagina 14 carregada no frame 14
+Endereco fisico: 3584 | Valor: 0
+Pagina 15 nao encontrada na TLB
+Endereco: 3840 | Pagina: 15 | Deslocamento: 0
+Pagina 15 carregada no frame 15
+Endereco fisico: 3840 | Valor: 0
+Pagina 16 nao encontrada na TLB
+Endereco: 4096 | Pagina: 16 | Deslocamento: 0
+Pagina 16 carregada no frame 16
+Endereco fisico: 4096 | Valor: 0
+Pagina 17 nao encontrada na TLB
+Endereco: 4352 | Pagina: 17 | Deslocamento: 0
+Pagina 17 carregada no frame 17
+Endereco fisico: 4352 | Valor: 0
+Pagina 18 nao encontrada na TLB
+Endereco: 4608 | Pagina: 18 | Deslocamento: 0
+Pagina 18 carregada no frame 18
+Endereco fisico: 4608 | Valor: 0
+Pagina 19 nao encontrada na TLB
+Endereco: 4864 | Pagina: 19 | Deslocamento: 0
+Pagina 19 carregada no frame 19
+Endereco fisico: 4864 | Valor: 0
+Pagina 20 nao encontrada na TLB
+Endereco: 5120 | Pagina: 20 | Deslocamento: 0
+Pagina 20 carregada no frame 20
+Endereco fisico: 5120 | Valor: 0
+Pagina 21 nao encontrada na TLB
+Endereco: 5376 | Pagina: 21 | Deslocamento: 0
+Pagina 21 carregada no frame 21
+Endereco fisico: 5376 | Valor: 0
+Pagina 22 nao encontrada na TLB
+Endereco: 5632 | Pagina: 22 | Deslocamento: 0
+Pagina 22 carregada no frame 22
+Endereco fisico: 5632 | Valor: 0
+Pagina 23 nao encontrada na TLB
+Endereco: 5888 | Pagina: 23 | Deslocamento: 0
+Pagina 23 carregada no frame 23
+Endereco fisico: 5888 | Valor: 0
+Pagina 24 nao encontrada na TLB
+Endereco: 6144 | Pagina: 24 | Deslocamento: 0
+Pagina 24 carregada no frame 24
+Endereco fisico: 6144 | Valor: 0
+Pagina 25 nao encontrada na TLB
+Endereco: 6400 | Pagina: 25 | Deslocamento: 0
+Pagina 25 carregada no frame 25
+Endereco fisico: 6400 | Valor: 0
+Pagina 26 nao encontrada na TLB
+Endereco: 6656 | Pagina: 26 | Deslocamento: 0
+Pagina 26 carregada no frame 26
+Endereco fisico: 6656 | Valor: 0
+Pagina 27 nao encontrada na TLB
+Endereco: 6912 | Pagina: 27 | Deslocamento: 0
+Pagina 27 carregada no frame 27
+Endereco fisico: 6912 | Valor: 0
+Pagina 28 nao encontrada na TLB
+Endereco: 7168 | Pagina: 28 | Deslocamento: 0
+Pagina 28 carregada no frame 28
+Endereco fisico: 7168 | Valor: 0
+Pagina 29 nao encontrada na TLB
+Endereco: 7424 | Pagina: 29 | Deslocamento: 0
+Pagina 29 carregada no frame 29
+Endereco fisico: 7424 | Valor: 0
+Pagina 30 nao encontrada na TLB
+Endereco: 7680 | Pagina: 30 | Deslocamento: 0
+Pagina 30 carregada no frame 30
+Endereco fisico: 7680 | Valor: 0
+Pagina 31 nao encontrada na TLB
+Endereco: 7936 | Pagina: 31 | Deslocamento: 0
+Pagina 31 carregada no frame 31
+Endereco fisico: 7936 | Valor: 0
+Pagina 32 nao encontrada na TLB
+Endereco: 8192 | Pagina: 32 | Deslocamento: 0
+Pagina 32 carregada no frame 32
+Endereco fisico: 8192 | Valor: 0
+Pagina 33 nao encontrada na TLB
+Endereco: 8448 | Pagina: 33 | Deslocamento: 0
+Pagina 33 carregada no frame 33
+Endereco fisico: 8448 | Valor: 0
+Pagina 34 nao encontrada na TLB
+Endereco: 8704 | Pagina: 34 | Deslocamento: 0
+Pagina 34 carregada no frame 34
+Endereco fisico: 8704 | Valor: 0
+Pagina 35 nao encontrada na TLB
+Endereco: 8960 | Pagina: 35 | Deslocamento: 0
+Pagina 35 carregada no frame 35
+Endereco fisico: 8960 | Valor: 0
+Pagina 36 nao encontrada na TLB
+Endereco: 9216 | Pagina: 36 | Deslocamento: 0
+Pagina 36 carregada no frame 36
+Endereco fisico: 9216 | Valor: 0
+Pagina 37 nao encontrada na TLB
+Endereco: 9472 | Pagina: 37 | Deslocamento: 0
+Pagina 37 carregada no frame 37
+Endereco fisico: 9472 | Valor: 0
+Pagina 38 nao encontrada na TLB
+Endereco: 9728 | Pagina: 38 | Deslocamento: 0
+Pagina 38 carregada no frame 38
+Endereco fisico: 9728 | Valor: 0
+Pagina 39 nao encontrada na TLB
+Endereco: 9984 | Pagina: 39 | Deslocamento: 0
+Pagina 39 carregada no frame 39
+Endereco fisico: 9984 | Valor: 0
+Pagina 40 nao encontrada na TLB
+Endereco: 10240 | Pagina: 40 | Deslocamento: 0
+Pagina 40 carregada no frame 40
+Endereco fisico: 10240 | Valor: 0
+Pagina 41 nao encontrada na TLB
+Endereco: 10496 | Pagina: 41 | Deslocamento: 0
+Pagina 41 carregada no frame 41
+Endereco fisico: 10496 | Valor: 0
+Pagina 42 nao encontrada na TLB
+Endereco: 10752 | Pagina: 42 | Deslocamento: 0
+Pagina 42 carregada no frame 42
+Endereco fisico: 10752 | Valor: 0
+Pagina 43 nao encontrada na TLB
+Endereco: 11008 | Pagina: 43 | Deslocamento: 0
+Pagina 43 carregada no frame 43
+Endereco fisico: 11008 | Valor: 0
+Pagina 44 nao encontrada na TLB
+Endereco: 11264 | Pagina: 44 | Deslocamento: 0
+Pagina 44 carregada no frame 44
+Endereco fisico: 11264 | Valor: 0
+Pagina 45 nao encontrada na TLB
+Endereco: 11520 | Pagina: 45 | Deslocamento: 0
+Pagina 45 carregada no frame 45
+Endereco fisico: 11520 | Valor: 0
+Pagina 46 nao encontrada na TLB
+Endereco: 11776 | Pagina: 46 | Deslocamento: 0
+Pagina 46 carregada no frame 46
+Endereco fisico: 11776 | Valor: 0
+Pagina 47 nao encontrada na TLB
+Endereco: 12032 | Pagina: 47 | Deslocamento: 0
+Pagina 47 carregada no frame 47
+Endereco fisico: 12032 | Valor: 0
+Pagina 48 nao encontrada na TLB
+Endereco: 12288 | Pagina: 48 | Deslocamento: 0
+Pagina 48 carregada no frame 48
+Endereco fisico: 12288 | Valor: 0
+Pagina 49 nao encontrada na TLB
+Endereco: 12544 | Pagina: 49 | Deslocamento: 0
+Pagina 49 carregada no frame 49
+Endereco fisico: 12544 | Valor: 0
+Pagina 50 nao encontrada na TLB
+Endereco: 12800 | Pagina: 50 | Deslocamento: 0
+Pagina 50 carregada no frame 50
+Endereco fisico: 12800 | Valor: 0
+Pagina 51 nao encontrada na TLB
+Endereco: 13056 | Pagina: 51 | Deslocamento: 0
+Pagina 51 carregada no frame 51
+Endereco fisico: 13056 | Valor: 0
+Pagina 52 nao encontrada na TLB
+Endereco: 13312 | Pagina: 52 | Deslocamento: 0
+Pagina 52 carregada no frame 52
+Endereco fisico: 13312 | Valor: 0
+Pagina 53 nao encontrada na TLB
+Endereco: 13568 | Pagina: 53 | Deslocamento: 0
+Pagina 53 carregada no frame 53
+Endereco fisico: 13568 | Valor: 0
+Pagina 54 nao encontrada na TLB
+Endereco: 13824 | Pagina: 54 | Deslocamento: 0
+Pagina 54 carregada no frame 54
+Endereco fisico: 13824 | Valor: 0
+Pagina 55 nao encontrada na TLB
+Endereco: 14080 | Pagina: 55 | Deslocamento: 0
+Pagina 55 carregada no frame 55
+Endereco fisico: 14080 | Valor: 0
+Pagina 56 nao encontrada na TLB
+Endereco: 14336 | Pagina: 56 | Deslocamento: 0
+Pagina 56 carregada no frame 56
+Endereco fisico: 14336 | Valor: 0
+Pagina 57 nao encontrada na TLB
+Endereco: 14592 | Pagina: 57 | Deslocamento: 0
+Pagina 57 carregada no frame 57
+Endereco fisico: 14592 | Valor: 0
+Pagina 58 nao encontrada na TLB
+Endereco: 14848 | Pagina: 58 | Deslocamento: 0
+Pagina 58 carregada no frame 58
+Endereco fisico: 14848 | Valor: 0
+Pagina 59 nao encontrada na TLB
+Endereco: 15104 | Pagina: 59 | Deslocamento: 0
+Pagina 59 carregada no frame 59
+Endereco fisico: 15104 | Valor: 0
+Pagina 60 nao encontrada na TLB
+Endereco: 15360 | Pagina: 60 | Deslocamento: 0
+Pagina 60 carregada no frame 60
+Endereco fisico: 15360 | Valor: 0
+Pagina 61 nao encontrada na TLB
+Endereco: 15616 | Pagina: 61 | Deslocamento: 0
+Pagina 61 carregada no frame 61
+Endereco fisico: 15616 | Valor: 0
+Pagina 62 nao encontrada na TLB
+Endereco: 15872 | Pagina: 62 | Deslocamento: 0
+Pagina 62 carregada no frame 62
+Endereco fisico: 15872 | Valor: 0
+Pagina 63 nao encontrada na TLB
+Endereco: 16128 | Pagina: 63 | Deslocamento: 0
+Pagina 63 carregada no frame 63
+Endereco fisico: 16128 | Valor: 0
+Pagina 64 nao encontrada na TLB
+Endereco: 16384 | Pagina: 64 | Deslocamento: 0
+Pagina 64 carregada no frame 64
+Endereco fisico: 16384 | Valor: 0
+Pagina 65 nao encontrada na TLB
+Endereco: 16640 | Pagina: 65 | Deslocamento: 0
+Pagina 65 carregada no frame 65
+Endereco fisico: 16640 | Valor: 0
+Pagina 66 nao encontrada na TLB
+Endereco: 16896 | Pagina: 66 | Deslocamento: 0
+Pagina 66 carregada no frame 66
+Endereco fisico: 16896 | Valor: 0
+Pagina 67 nao encontrada na TLB
+Endereco: 17152 | Pagina: 67 | Deslocamento: 0
+Pagina 67 carregada no frame 67
+Endereco fisico: 17152 | Valor: 0
+Pagina 68 nao encontrada na TLB
+Endereco: 17408 | Pagina: 68 | Deslocamento: 0
+Pagina 68 carregada no frame 68
+Endereco fisico: 17408 | Valor: 0
+Pagina 69 nao encontrada na TLB
+Endereco: 17664 | Pagina: 69 | Deslocamento: 0
+Pagina 69 carregada no frame 69
+Endereco fisico: 17664 | Valor: 0
+Pagina 70 nao encontrada na TLB
+Endereco: 17920 | Pagina: 70 | Deslocamento: 0
+Pagina 70 carregada no frame 70
+Endereco fisico: 17920 | Valor: 0
+Pagina 71 nao encontrada na TLB
+Endereco: 18176 | Pagina: 71 | Deslocamento: 0
+Pagina 71 carregada no frame 71
+Endereco fisico: 18176 | Valor: 0
+Pagina 72 nao encontrada na TLB
+Endereco: 18432 | Pagina: 72 | Deslocamento: 0
+Pagina 72 carregada no frame 72
+Endereco fisico: 18432 | Valor: 0
+Pagina 73 nao encontrada na TLB
+Endereco: 18688 | Pagina: 73 | Deslocamento: 0
+Pagina 73 carregada no frame 73
+Endereco fisico: 18688 | Valor: 0
+Pagina 74 nao encontrada na TLB
+Endereco: 18944 | Pagina: 74 | Deslocamento: 0
+Pagina 74 carregada no frame 74
+Endereco fisico: 18944 | Valor: 0
+Pagina 75 nao encontrada na TLB
+Endereco: 19200 | Pagina: 75 | Deslocamento: 0
+Pagina 75 carregada no frame 75
+Endereco fisico: 19200 | Valor: 0
+Pagina 76 nao encontrada na TLB
+Endereco: 19456 | Pagina: 76 | Deslocamento: 0
+Pagina 76 carregada no frame 76
+Endereco fisico: 19456 | Valor: 0
+Pagina 77 nao encontrada na TLB
+Endereco: 19712 | Pagina: 77 | Deslocamento: 0
+Pagina 77 carregada no frame 77
+Endereco fisico: 19712 | Valor: 0
+Pagina 78 nao encontrada na TLB
+Endereco: 19968 | Pagina: 78 | Deslocamento: 0
+Pagina 78 carregada no frame 78
+Endereco fisico: 19968 | Valor: 0
+Pagina 79 nao encontrada na TLB
+Endereco: 20224 | Pagina: 79 | Deslocamento: 0
+Pagina 79 carregada no frame 79
+Endereco fisico: 20224 | Valor: 0
+Pagina 80 nao encontrada na TLB
+Endereco: 20480 | Pagina: 80 | Deslocamento: 0
+Pagina 80 carregada no frame 80
+Endereco fisico: 20480 | Valor: 0
+Pagina 81 nao encontrada na TLB
+Endereco: 20736 | Pagina: 81 | Deslocamento: 0
+Pagina 81 carregada no frame 81
+Endereco fisico: 20736 | Valor: 0
+Pagina 82 nao encontrada na TLB
+Endereco: 20992 | Pagina: 82 | Deslocamento: 0
+Pagina 82 carregada no frame 82
+Endereco fisico: 20992 | Valor: 0
+Pagina 83 nao encontrada na TLB
+Endereco: 21248 | Pagina: 83 | Deslocamento: 0
+Pagina 83 carregada no frame 83
+Endereco fisico: 21248 | Valor: 0
+Pagina 84 nao encontrada na TLB
+Endereco: 21504 | Pagina: 84 | Deslocamento: 0
+Pagina 84 carregada no frame 84
+Endereco fisico: 21504 | Valor: 0
+Pagina 85 nao encontrada na TLB
+Endereco: 21760 | Pagina: 85 | Deslocamento: 0
+Pagina 85 carregada no frame 85
+Endereco fisico: 21760 | Valor: 0
+Pagina 86 nao encontrada na TLB
+Endereco: 22016 | Pagina: 86 | Deslocamento: 0
+Pagina 86 carregada no frame 86
+Endereco fisico: 22016 | Valor: 0
+Pagina 87 nao encontrada na TLB
+Endereco: 22272 | Pagina: 87 | Deslocamento: 0
+Pagina 87 carregada no frame 87
+Endereco fisico: 22272 | Valor: 0
+Pagina 88 nao encontrada na TLB
+Endereco: 22528 | Pagina: 88 | Deslocamento: 0
+Pagina 88 carregada no frame 88
+Endereco fisico: 22528 | Valor: 0
+Pagina 89 nao encontrada na TLB
+Endereco: 22784 | Pagina: 89 | Deslocamento: 0
+Pagina 89 carregada no frame 89
+Endereco fisico: 22784 | Valor: 0
+Pagina 90 nao encontrada na TLB
+Endereco: 23040 | Pagina: 90 | Deslocamento: 0
+Pagina 90 carregada no frame 90
+Endereco fisico: 23040 | Valor: 0
+Pagina 91 nao encontrada na TLB
+Endereco: 23296 | Pagina: 91 | Deslocamento: 0
+Pagina 91 carregada no frame 91
+Endereco fisico: 23296 | Valor: 0
+Pagina 92 nao encontrada na TLB
+Endereco: 23552 | Pagina: 92 | Deslocamento: 0
+Pagina 92 carregada no frame 92
+Endereco fisico: 23552 | Valor: 0
+Pagina 93 nao encontrada na TLB
+Endereco: 23808 | Pagina: 93 | Deslocamento: 0
+Pagina 93 carregada no frame 93
+Endereco fisico: 23808 | Valor: 0
+Pagina 94 nao encontrada na TLB
+Endereco: 24064 | Pagina: 94 | Deslocamento: 0
+Pagina 94 carregada no frame 94
+Endereco fisico: 24064 | Valor: 0
+Pagina 95 nao encontrada na TLB
+Endereco: 24320 | Pagina: 95 | Deslocamento: 0
+Pagina 95 carregada no frame 95
+Endereco fisico: 24320 | Valor: 0
+Pagina 96 nao encontrada na TLB
+Endereco: 24576 | Pagina: 96 | Deslocamento: 0
+Pagina 96 carregada no frame 96
+Endereco fisico: 24576 | Valor: 0
+Pagina 97 nao encontrada na TLB
+Endereco: 24832 | Pagina: 97 | Deslocamento: 0
+Pagina 97 carregada no frame 97
+Endereco fisico: 24832 | Valor: 0
+Pagina 98 nao encontrada na TLB
+Endereco: 25088 | Pagina: 98 | Deslocamento: 0
+Pagina 98 carregada no frame 98
+Endereco fisico: 25088 | Valor: 0
+Pagina 99 nao encontrada na TLB
+Endereco: 25344 | Pagina: 99 | Deslocamento: 0
+Pagina 99 carregada no frame 99
+Endereco fisico: 25344 | Valor: 0
+Pagina 100 nao encontrada na TLB
+Endereco: 25600 | Pagina: 100 | Deslocamento: 0
+Pagina 100 carregada no frame 100
+Endereco fisico: 25600 | Valor: 0
+Pagina 101 nao encontrada na TLB
+Endereco: 25856 | Pagina: 101 | Deslocamento: 0
+Pagina 101 carregada no frame 101
+Endereco fisico: 25856 | Valor: 0
+Pagina 102 nao encontrada na TLB
+Endereco: 26112 | Pagina: 102 | Deslocamento: 0
+Pagina 102 carregada no frame 102
+Endereco fisico: 26112 | Valor: 0
+Pagina 103 nao encontrada na TLB
+Endereco: 26368 | Pagina: 103 | Deslocamento: 0
+Pagina 103 carregada no frame 103
+Endereco fisico: 26368 | Valor: 0
+Pagina 104 nao encontrada na TLB
+Endereco: 26624 | Pagina: 104 | Deslocamento: 0
+Pagina 104 carregada no frame 104
+Endereco fisico: 26624 | Valor: 0
+Pagina 105 nao encontrada na TLB
+Endereco: 26880 | Pagina: 105 | Deslocamento: 0
+Pagina 105 carregada no frame 105
+Endereco fisico: 26880 | Valor: 0
+Pagina 106 nao encontrada na TLB
+Endereco: 27136 | Pagina: 106 | Deslocamento: 0
+Pagina 106 carregada no frame 106
+Endereco fisico: 27136 | Valor: 0
+Pagina 107 nao encontrada na TLB
+Endereco: 27392 | Pagina: 107 | Deslocamento: 0
+Pagina 107 carregada no frame 107
+Endereco fisico: 27392 | Valor: 0
+Pagina 108 nao encontrada na TLB
+Endereco: 27648 | Pagina: 108 | Deslocamento: 0
+Pagina 108 carregada no frame 108
+Endereco fisico: 27648 | Valor: 0
+Pagina 109 nao encontrada na TLB
+Endereco: 27904 | Pagina: 109 | Deslocamento: 0
+Pagina 109 carregada no frame 109
+Endereco fisico: 27904 | Valor: 0
+Pagina 110 nao encontrada na TLB
+Endereco: 28160 | Pagina: 110 | Deslocamento: 0
+Pagina 110 carregada no frame 110
+Endereco fisico: 28160 | Valor: 0
+Pagina 111 nao encontrada na TLB
+Endereco: 28416 | Pagina: 111 | Deslocamento: 0
+Pagina 111 carregada no frame 111
+Endereco fisico: 28416 | Valor: 0
+Pagina 112 nao encontrada na TLB
+Endereco: 28672 | Pagina: 112 | Deslocamento: 0
+Pagina 112 carregada no frame 112
+Endereco fisico: 28672 | Valor: 0
+Pagina 113 nao encontrada na TLB
+Endereco: 28928 | Pagina: 113 | Deslocamento: 0
+Pagina 113 carregada no frame 113
+Endereco fisico: 28928 | Valor: 0
+Pagina 114 nao encontrada na TLB
+Endereco: 29184 | Pagina: 114 | Deslocamento: 0
+Pagina 114 carregada no frame 114
+Endereco fisico: 29184 | Valor: 0
+Pagina 115 nao encontrada na TLB
+Endereco: 29440 | Pagina: 115 | Deslocamento: 0
+Pagina 115 carregada no frame 115
+Endereco fisico: 29440 | Valor: 0
+Pagina 116 nao encontrada na TLB
+Endereco: 29696 | Pagina: 116 | Deslocamento: 0
+Pagina 116 carregada no frame 116
+Endereco fisico: 29696 | Valor: 0
+Pagina 117 nao encontrada na TLB
+Endereco: 29952 | Pagina: 117 | Deslocamento: 0
+Pagina 117 carregada no frame 117
+Endereco fisico: 29952 | Valor: 0
+Pagina 118 nao encontrada na TLB
+Endereco: 30208 | Pagina: 118 | Deslocamento: 0
+Pagina 118 carregada no frame 118
+Endereco fisico: 30208 | Valor: 0
+Pagina 119 nao encontrada na TLB
+Endereco: 30464 | Pagina: 119 | Deslocamento: 0
+Pagina 119 carregada no frame 119
+Endereco fisico: 30464 | Valor: 0
+Pagina 120 nao encontrada na TLB
+Endereco: 30720 | Pagina: 120 | Deslocamento: 0
+Pagina 120 carregada no frame 120
+Endereco fisico: 30720 | Valor: 0
+Pagina 121 nao encontrada na TLB
+Endereco: 30976 | Pagina: 121 | Deslocamento: 0
+Pagina 121 carregada no frame 121
+Endereco fisico: 30976 | Valor: 0
+Pagina 122 nao encontrada na TLB
+Endereco: 31232 | Pagina: 122 | Deslocamento: 0
+Pagina 122 carregada no frame 122
+Endereco fisico: 31232 | Valor: 0
+Pagina 123 nao encontrada na TLB
+Endereco: 31488 | Pagina: 123 | Deslocamento: 0
+Pagina 123 carregada no frame 123
+Endereco fisico: 31488 | Valor: 0
+Pagina 124 nao encontrada na TLB
+Endereco: 31744 | Pagina: 124 | Deslocamento: 0
+Pagina 124 carregada no frame 124
+Endereco fisico: 31744 | Valor: 0
+Pagina 125 nao encontrada na TLB
+Endereco: 32000 | Pagina: 125 | Deslocamento: 0
+Pagina 125 carregada no frame 125
+Endereco fisico: 32000 | Valor: 0
+Pagina 126 nao encontrada na TLB
+Endereco: 32256 | Pagina: 126 | Deslocamento: 0
+Pagina 126 carregada no frame 126
+Endereco fisico: 32256 | Valor: 0
+Pagina 127 nao encontrada na TLB
+Endereco: 32512 | Pagina: 127 | Deslocamento: 0
+Pagina 127 carregada no frame 127
+Endereco fisico: 32512 | Valor: 0
+Pagina 0 nao encontrada na TLB
+Pagina 0 encontrada no frame 0
+Endereco fisico: 0 | Valor: 0
+Pagina 

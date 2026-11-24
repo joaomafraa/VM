@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <errno.h>
 #include <stdlib.h>
+#include <pthread.h>
 #define NUM_PAGINAS 256
 #define NUM_FRAMES 128
 #define TAM_PAGINA 256
@@ -16,6 +17,20 @@ typedef struct{
     int pagina;
     int frame;
 }EntradaTLB;
+typedef struct{
+    EntradaTLB *tlb;
+    int pagina;
+    int indice;
+    int encontrou;
+}BuscaTLB;
+
+void *verificar_entrada_tlb(void *argumento){
+    BuscaTLB *busca = (BuscaTLB *)argumento;
+
+    busca->encontrou = (busca->tlb[busca->indice].pagina == busca->pagina);
+
+    return NULL;
+}
 
 int ler_algoritimo(char* texto, algoritimo *algoritimo){
     if(strcmp(texto,"fifo")==0){
@@ -29,8 +44,34 @@ int ler_algoritimo(char* texto, algoritimo *algoritimo){
     return 0;
 }
 int buscar_na_tlb(EntradaTLB tlb[], int pagina){
-    for(int i = 0; i < TAM_TLB; i++){
-        if (tlb[i].pagina == pagina){
+    pthread_t threads[TAM_TLB];
+    BuscaTLB buscas[TAM_TLB];
+    int criadas = 0;
+    int erro = 0;
+    for(int i=0;i<TAM_TLB;i++){
+        buscas[i].tlb = tlb;
+        buscas[i].pagina = pagina;
+        buscas[i].indice = i;
+        buscas[i].encontrou = 0;
+        if(pthread_create(&threads[i], NULL, verificar_entrada_tlb, &buscas[i]) != 0){
+            fprintf(stderr, "Erro ao criar thread da TLB\n");
+            erro = 1;
+            break;
+        }
+
+        criadas++;
+    }
+    for(int i=0;i<criadas;i++){
+        if(pthread_join(threads[i], NULL) != 0){
+            fprintf(stderr, "Erro ao aguardar thread da TLB\n");
+            exit(EXIT_FAILURE);
+        }
+    }
+    if(erro){
+        return -2;
+    }
+    for(int i=0;i<TAM_TLB;i++){
+        if(buscas[i].encontrou){
             return i;
         }
     }
@@ -50,6 +91,9 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
     long long ordem_insercao_tlb[TAM_TLB] = {0};
     long long ultimo_uso_tlb[TAM_TLB] = {0};
     long long contador_tlb = 0;
+    int enderecos_traduzidos = 0;
+    int faltas_pagina = 0;
+    int acertos_tlb = 0;
 
     EntradaTLB tlb[TAM_TLB];
     for(int i = 0; i < TAM_TLB; i++){
@@ -79,14 +123,21 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
         long deslocamento = endereco % 256;
         contador_tlb++;
         int indice_tlb = buscar_na_tlb(tlb, (int)numero_pagina);
+        if(indice_tlb == -2){
+            return 0;
+        }
+        int frame_atual;
         if(indice_tlb == -1){
             printf("Pagina %ld nao encontrada na TLB\n", numero_pagina);
         }else{
             printf("Pagina %ld encontrada na TLB, entrada %d\n",numero_pagina, indice_tlb);
+            acertos_tlb++;
             ultimo_uso_tlb[indice_tlb]=contador_tlb;
+            frame_atual = tlb[indice_tlb].frame;
         }
-        if(tabela_paginas[numero_pagina] == -1){
+        if(indice_tlb == -1 && tabela_paginas[numero_pagina] == -1){
             int frame;
+            faltas_pagina++;
 
             if(proximo_frame<NUM_FRAMES){
                 frame=proximo_frame;
@@ -129,7 +180,7 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
 
             printf("Endereco: %ld | Pagina: %ld | Deslocamento: %ld\n",endereco, numero_pagina, deslocamento);
             printf("Pagina %ld carregada no frame %d\n",numero_pagina, frame);
-        }else{
+        }else if(indice_tlb == -1){
             printf("Pagina %ld encontrada no frame %d\n",numero_pagina, tabela_paginas[numero_pagina]);
         }
         if(indice_tlb == -1){
@@ -158,23 +209,37 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
             tlb[posicao].frame = tabela_paginas[numero_pagina];
             ordem_insercao_tlb[posicao] = contador_tlb;
             ultimo_uso_tlb[posicao] = contador_tlb;
+            indice_tlb = posicao;
+            frame_atual = tabela_paginas[numero_pagina];
         }
         
         contador_acessos++;
-        ultimo_acesso[tabela_paginas[numero_pagina]] = contador_acessos;
-        int frame_atual = tabela_paginas[numero_pagina];
+        ultimo_acesso[frame_atual] = contador_acessos;
         long endereco_fisico = frame_atual * TAM_PAGINA + deslocamento;
         int valor = memoria_fisica[frame_atual][deslocamento];
         if(valor >= 128){
             valor -= 256;
         }
         printf("Endereco fisico: %ld | Valor: %d\n",endereco_fisico, valor);
+        enderecos_traduzidos++;
     }                                                                       
     if(ferror(arquivo)){
         fprintf(stderr,"erro durante a leitura do arq\n");
         return 0;
     }
-    
+    double taxa_faltas = 0.0;
+    double taxa_acertos_tlb = 0.0;
+
+    if(enderecos_traduzidos > 0){
+        taxa_faltas = (double)faltas_pagina / enderecos_traduzidos;
+        taxa_acertos_tlb = (double)acertos_tlb / enderecos_traduzidos;
+    }
+
+    printf("Number of Translated Addresses = %d\n", enderecos_traduzidos);
+    printf("Page Faults = %d\n", faltas_pagina);
+    printf("Page Fault Rate = %.3f\n", taxa_faltas);
+    printf("TLB Hits = %d\n", acertos_tlb);
+    printf("TLB Hit Rate = %.3f\n", taxa_acertos_tlb);
     return 1;
 }
 void inicializar_tabela(int *tabela_paginas){

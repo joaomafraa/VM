@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -std=c11 -Wall -Wextra -Wpedantic -O2
+CFLAGS = -Wall -Wextra -std=c11 -pthread
 
 vm: vm.c
 	$(CC) $(CFLAGS) vm.c -o vm
