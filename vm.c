@@ -79,7 +79,7 @@ int buscar_na_tlb(EntradaTLB tlb[], int pagina){
 }
 
 int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_paginas,FILE *backing_store,
-   unsigned char memoria_fisica[NUM_FRAMES][TAM_PAGINA],algoritimo algoritimo_tlb){
+   unsigned char memoria_fisica[NUM_FRAMES][TAM_PAGINA],algoritimo algoritimo_tlb,FILE *saida){
     
     char linha[256];
     int n_linha = 0;
@@ -221,6 +221,10 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
             valor -= 256;
         }
         printf("Endereco fisico: %ld | Valor: %d\n",endereco_fisico, valor);
+        if(fprintf(saida,"Virtual address: %ld TLB: %d Physical address: %ld Value: %d\n",endereco, indice_tlb, endereco_fisico, valor) < 0){
+            perror("Erro ao escrever em correct.txt");
+            return 0;
+        }
         enderecos_traduzidos++;
     }                                                                       
     if(ferror(arquivo)){
@@ -235,11 +239,15 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
         taxa_acertos_tlb = (double)acertos_tlb / enderecos_traduzidos;
     }
 
-    printf("Number of Translated Addresses = %d\n", enderecos_traduzidos);
-    printf("Page Faults = %d\n", faltas_pagina);
-    printf("Page Fault Rate = %.3f\n", taxa_faltas);
-    printf("TLB Hits = %d\n", acertos_tlb);
-    printf("TLB Hit Rate = %.3f\n", taxa_acertos_tlb);
+    if(fprintf(saida,"Number of Translated Addresses = %d\n"
+                     "Page Faults = %d\n"
+                     "Page Fault Rate = %.3f\n"
+                     "TLB Hits = %d\n"
+                     "TLB Hit Rate = %.3f\n",
+               enderecos_traduzidos, faltas_pagina, taxa_faltas, acertos_tlb, taxa_acertos_tlb) < 0){
+        perror("Erro ao escrever em correct.txt");
+        return 0;
+    }
     return 1;
 }
 void inicializar_tabela(int *tabela_paginas){
@@ -282,13 +290,27 @@ int main(int argc, char** argv){
         fclose(arq_end);
         return 1;
     }
+    FILE *saida = fopen("correct.txt", "w");
+    if(saida == NULL){
+        perror("Erro ao criar correct.txt");
+        fclose(backing_store);
+        fclose(arq_end);
+        return 1;
+    }
     inicializar_tabela(tabela_paginas);
-    if(!ler_enderecos(arq_end,tabela_paginas,algoritimo_paginas,backing_store,memoria_fisica,algoritimo_tlb)){
+    if(!ler_enderecos(arq_end,tabela_paginas,algoritimo_paginas,backing_store,memoria_fisica,algoritimo_tlb,saida)){
+        fclose(saida);
         fclose(arq_end);
         fclose(backing_store);
         return 1;
     }
 
+    if(fclose(saida) != 0){
+        perror("Erro ao fechar correct.txt");
+        fclose(backing_store);
+        fclose(arq_end);
+        return 1;
+    }
     fclose(backing_store);
     fclose(arq_end);
     printf("ok");
