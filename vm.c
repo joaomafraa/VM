@@ -38,7 +38,7 @@ int buscar_na_tlb(EntradaTLB tlb[], int pagina){
 }
 
 int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_paginas,FILE *backing_store,
-   unsigned char memoria_fisica[NUM_FRAMES][TAM_PAGINA]){
+   unsigned char memoria_fisica[NUM_FRAMES][TAM_PAGINA],algoritimo algoritimo_tlb){
     
     char linha[256];
     int n_linha = 0;
@@ -47,6 +47,9 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
     int proxima_vitima = 0;
     long long ultimo_acesso[NUM_FRAMES] = {0};
     long long contador_acessos = 0;
+    long long ordem_insercao_tlb[TAM_TLB] = {0};
+    long long ultimo_uso_tlb[TAM_TLB] = {0};
+    long long contador_tlb = 0;
 
     EntradaTLB tlb[TAM_TLB];
     for(int i = 0; i < TAM_TLB; i++){
@@ -74,11 +77,13 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
         }
         long numero_pagina = endereco / 256;
         long deslocamento = endereco % 256;
+        contador_tlb++;
         int indice_tlb = buscar_na_tlb(tlb, (int)numero_pagina);
         if(indice_tlb == -1){
             printf("Pagina %ld nao encontrada na TLB\n", numero_pagina);
         }else{
             printf("Pagina %ld encontrada na TLB, entrada %d\n",numero_pagina, indice_tlb);
+            ultimo_uso_tlb[indice_tlb]=contador_tlb;
         }
         if(tabela_paginas[numero_pagina] == -1){
             int frame;
@@ -101,6 +106,12 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
                 }
                 int pagina_removida = pagina_no_frame[frame];
                 tabela_paginas[pagina_removida] = -1;
+                for(int i=0;i<TAM_TLB;i++){
+                    if(tlb[i].pagina == pagina_removida){
+                        tlb[i].pagina = -1;
+                        tlb[i].frame = -1;
+                    }
+                }
                 printf("pagina %d removida do frame %d\n",pagina_removida, frame);
             }
             if(fseek(backing_store, numero_pagina * TAM_PAGINA, SEEK_SET) != 0){
@@ -114,12 +125,41 @@ int ler_enderecos(FILE* arquivo,int *tabela_paginas,algoritimo algoritimo_pagina
             }
             tabela_paginas[numero_pagina] = frame;
             pagina_no_frame[frame] = numero_pagina;
+            
 
             printf("Endereco: %ld | Pagina: %ld | Deslocamento: %ld\n",endereco, numero_pagina, deslocamento);
             printf("Pagina %ld carregada no frame %d\n",numero_pagina, frame);
         }else{
             printf("Pagina %ld encontrada no frame %d\n",numero_pagina, tabela_paginas[numero_pagina]);
         }
+        if(indice_tlb == -1){
+            int posicao=-1;
+            for(int i=0;i<TAM_TLB;i++){
+                if(tlb[i].pagina == -1){
+                    posicao=i;
+                    break;
+                }
+            }
+            if(posicao == -1){
+                posicao=0;
+                for(int i =1;i<TAM_TLB;i++){
+                    if(algoritimo_tlb == FIFO){
+                        if(ordem_insercao_tlb[i] < ordem_insercao_tlb[posicao]){
+                            posicao = i;
+                        }
+                    }else{
+                        if(ultimo_uso_tlb[i] < ultimo_uso_tlb[posicao]){
+                            posicao=i;
+                        }
+                    }
+                }
+            }
+            tlb[posicao].pagina = (int)numero_pagina;
+            tlb[posicao].frame = tabela_paginas[numero_pagina];
+            ordem_insercao_tlb[posicao] = contador_tlb;
+            ultimo_uso_tlb[posicao] = contador_tlb;
+        }
+        
         contador_acessos++;
         ultimo_acesso[tabela_paginas[numero_pagina]] = contador_acessos;
         int frame_atual = tabela_paginas[numero_pagina];
@@ -178,7 +218,7 @@ int main(int argc, char** argv){
         return 1;
     }
     inicializar_tabela(tabela_paginas);
-    if(!ler_enderecos(arq_end,tabela_paginas,algoritimo_paginas,backing_store,memoria_fisica)){
+    if(!ler_enderecos(arq_end,tabela_paginas,algoritimo_paginas,backing_store,memoria_fisica,algoritimo_tlb)){
         fclose(arq_end);
         fclose(backing_store);
         return 1;

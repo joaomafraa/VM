@@ -163,4 +163,36 @@ Script done on 2026-11-22 23:15:27-03:00 [COMMAND_EXIT_CODE="0"]
 /SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [K]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [?2004l
 exit
 Script done.
-[?2004h]0;joao@LaptopJoaoM:
+[?2004h]0;joao@LaptopJoaoM:Script started on 2026-11-24 01:18:14-03:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="147" LINES="14"]
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ date
+[?2004lTue Nov 24 01:18:17 -03 2026
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ pwd
+[?2004l/mnt/c/SO/VM
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ whoami
+[?2004ljoao
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ make
+[?2004lcc -std=c11 -Wall -Wextra -Wpedantic -O2 vm.c -o vm
+[01m[Kvm.c:[m[K In function ‘[01m[Kler_enderecos[m[K’:
+[01m[Kvm.c:51:15:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kultimo_uso_tlb[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+   51 |     long long [01;35m[Kultimo_uso_tlb[m[K[TAM_TLB] = {0};
+      |               [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[Kvm.c:50:15:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kordem_insercao_tlb[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+   50 |     long long [01;35m[Kordem_insercao_tlb[m[K[TAM_TLB] = {0};
+      |               [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[Kvm.c:41:68:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kalgoritimo_tlb[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   41 |    unsigned char memoria_fisica[NUM_FRAMES][TAM_PAGINA],[01;35m[Kalgoritimo algoritimo_tlb[m[K){
+      |                                                         [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ make
+[?2004lcc -std=c11 -Wall -Wextra -Wpedantic -O2 vm.c -o vm
+[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7m./vm teste_tlb.txt fifo fifo > teste_fifo.txt[27m
+[7m./vm teste_tlb.txt fifo lru > teste_lru.txt[27m[A./vm teste_tlb.txt fifo fifo > teste_fifo.txt
+./vm teste_tlb.txt fifo lru > teste_lru.txt
+[?2004l[?2004h]0;joao@LaptopJoaoM: /mnt/c/SO/VM[01;32mjoao@LaptopJoaoM[00m:[01;34m/mnt/c/SO/VM[00m$ [7mgrep "Pagina 0 .* na TLB" teste_fifo.txt[27m
+[7mgrep "Pagina 0 .* na TLB" teste_lru.txt[27m[Agrep "Pagina 0 .* na TLB" teste_fifo.txt
+grep "Pagina 0 .* na TLB" teste_lru.txt
+[?2004l[01;31m[KPagina 0 nao encontrada na TLB[m[K
+[01;31m[KPagina 0 encontrada na TLB[m[K, entrada 0
+[01;31m[KPagina 0 nao encontrada na TLB[m[K
+[01;31m[KPagina 0 nao encontrada na TLB[m[K
+[01;31m[KPagina 0 encontrada na TLB[m[K, entrada 0
+[01;31m[KPagina 0 encontrada na TLB[m[K
